@@ -68,6 +68,7 @@ class Piggy(PiggyParent):
     
     def dab(self):
         self.MOTOR_LEFT(50)
+        time.sleep(1)
         self.MOTOR_RIGHT(80)
             
     
