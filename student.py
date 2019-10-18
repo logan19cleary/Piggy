@@ -56,8 +56,8 @@ class Piggy(PiggyParent):
     def dance(self):
         # HIGHER - ORDERED
         for x in range(3):
-            #self.orangejustice()
-            self.dab()
+            self.orangejustice()
+            #self.dab()
             #self.floss
             #self.angeldust
             #self.buckle
@@ -67,6 +67,7 @@ class Piggy(PiggyParent):
     '''
     
     def dab(self):
+        #The simple but the classic dominat dance move""
         self.MOTOR_LEFT(50)
         time.sleep(1)
         self.MOTOR_RIGHT(80)
