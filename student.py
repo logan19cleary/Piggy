@@ -70,6 +70,31 @@ class Piggy(PiggyParent):
         self.MOTOR_LEFT(50)
         time.sleep(1)
         self.MOTOR_RIGHT(80)
+
+    def angeldust(self):
+        #A hockey dance that shows that you are the best player in the world""
+        self.MOTOR_LEFT(20)
+        time.sleep(1)
+        self.MOTOR_LEFT(50)
+        self.servo(1500)
+
+    def buckle(self):
+        #A simple but fun dance, to show you are the top dog in the room""
+        self.MOTOR_RIGHT(90)
+        time.sleep(1)
+        self.servo(1400)
+        time.sleep(.5)
+        self.MOTOR_LEFT(50)
+
+    def orangejustice(self):
+        #A never ending tiring move that repeats by going crazy""
+        while True:
+            self.MOTOR_LEFT(50)
+            time.sleep(.5)
+            self.servo(1400)
+            time.sleep(1)
+            self.MOTOR_RIGHT(90)
+        
             
     
    
