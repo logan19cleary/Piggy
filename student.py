@@ -57,7 +57,7 @@ class Piggy(PiggyParent):
     def dance(self):
         # HIGHER - ORDERED
         # check to see it's safe
-        if not self.saftey_check():
+        if not self.safe_to_dance():
             print("No dance time")
             return
         else:
