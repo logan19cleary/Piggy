@@ -55,12 +55,29 @@ class Piggy(PiggyParent):
 
     def dance(self):
         # HIGHER - ORDERED
+        # check to see it's safe
+        if not self.saftey_check():
+            print("No dance time")
+            return
+        else:
+            print("Dance Time!")
         for x in range(3):
             self.orangejustice()
-            #self.dab()
-            #self.floss
-            #self.angeldust
-            #self.buckle
+            self.dab()
+            self.floss
+            self.angeldust
+            self.buckle
+
+    def safe_to_dance(self):
+        """ Does a 360 check to see if clear
+        for x in range(4):
+            for ang in range(1000, 2001, 100):
+                self.servo(ang)
+                time.sleep(.1)
+                if self.read_distance() < 250:
+                    return False
+                self.turn_by_deg(90)
+            return True
 
     '''
     DANCE METHODS
