@@ -111,16 +111,9 @@ class Piggy(PiggyParent):
             time.sleep(.5)
             self.servo(1400)
             time.sleep(1)
-            self.MOTOR_RIGHT(90)
-        
+            self.MOTOR_RIGHT(90)        
             
-    
-   
-        
-
-
     def scan(self):
-        """Sweep the servo and populate the scan_data dictionary"""
         for angle in range(self.MIDPOINT-350, self.MIDPOINT+350, 3):
             self.servo(angle)
             self.scan_data[angle] = self.read_distance()
