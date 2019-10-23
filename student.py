@@ -1,5 +1,6 @@
 from teacher import PiggyParent
 import sys
+import time
 
 class Piggy(PiggyParent):
 
@@ -69,7 +70,7 @@ class Piggy(PiggyParent):
             self.buckle
 
     def safe_to_dance(self):
-        """ Does a 360 check to see if clear
+        """ Does a 360 check to see if clear"""
         for x in range(4):
             for ang in range(1000, 2001, 100):
                 self.servo(ang)
@@ -105,7 +106,7 @@ class Piggy(PiggyParent):
         self.MOTOR_LEFT(50)
 
     def orangejustice(self):
-        #A never ending tiring move that repeats by going crazy""
+        """A never ending tiring move that repeats by going crazy"""
         while True:
             self.MOTOR_LEFT(50)
             time.sleep(.5)
@@ -129,9 +130,6 @@ class Piggy(PiggyParent):
 
 
 
-
-
-
 ###########
 ## MAIN APP
 if __name__ == "__main__":  # only run this loop if this is the main file
@@ -147,4 +145,4 @@ if __name__ == "__main__":  # only run this loop if this is the main file
             p.menu()
 
     except KeyboardInterrupt: # except the program gets interrupted by Ctrl+C on the keyboard.
-        p.quit()  
+        p.quit()
