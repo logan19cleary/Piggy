@@ -115,7 +115,7 @@ class Piggy(PiggyParent):
             self.MOTOR_RIGHT(90)        
             
     def scan(self):
-        for angle in range(self.MIDPOINT-350, self.MIDPOINT+350, 3):
+        for angle in range(self.MIDPOINT-350, self.MIDPOINT+350, 300):
             self.servo(angle)
             self.scan_data[angle] = self.read_distance()
 
