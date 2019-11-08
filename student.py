@@ -121,22 +121,7 @@ class Piggy(PiggyParent):
 
     def obstacle_count(self):
         """Does a 360 scan and returns the number of obstacles it sees"""
-        found_something = False # trigger
-        trigger_distance = 250 
-        count = 0
-        starting_position = self.get_heading()
-        self.right(primary=60, counter=-60)
-        while self.get_heading() != starting_position:
-            if self.read_distance() < 250 and not found_something
-                found_something = True
-                count += 1
-                print("\n FOUND SOMETHING \n")
-            elif self.read_distance() > 250 and found_something:
-                found_something = False
-                print("I have a cleary view. Resetting my counter")
-        self.stop()
-        print("I found this many things: %d" % count)
-        return count 
+        print("Mr. A, give me an A")
 
 
     def nav(self):
@@ -170,7 +155,6 @@ class Piggy(PiggyParent):
                 self.turn_by_deg(-45)
             else:
                 self.turn_by_deg(45)
-Collapse
 
 
 
