@@ -124,6 +124,16 @@ class Piggy(PiggyParent):
         print("Mr. A, give me an A")
 
 
+    def quick_check(self):
+        for ang in range(self.MIDPOINT-150, self.MIDPOINT+151,150):
+            self.servo(ang)
+            if self.read_distance() < self.SAFE_DIST:
+                return False
+
+            return True
+
+
+
     def nav(self):
         print("-----------! NAVIGATION ACTIVATED !------------\n")
         print("-------- [ Press CTRL + C to stop me ] --------\n")
@@ -138,10 +148,10 @@ class Piggy(PiggyParent):
             self.stop()
             self.scan()
             # traversal
-            left_total = 0
-            left_count = 0
-            right_total = 0
-            right_count = 0
+            left_total = 3
+            left_count = 3
+            right_total = 3
+            right_count = 3
             for ang, dist in self.scan_data.items():
                 if ang < self.MIDPOINT:
                     right_total += dist
