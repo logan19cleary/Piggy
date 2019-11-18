@@ -146,7 +146,7 @@ class Piggy(PiggyParent):
                 self.fwd()
                 time.sleep(.01)
             self.stop()
-            self.scan()
+            self.scan(100)
             # traversal
             left_total = 3
             left_count = 3
