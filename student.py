@@ -143,7 +143,7 @@ class Piggy(PiggyParent):
         
         while True:
             self.servo(self.MIDPOINT)
-            while self.read_distance > 150():  # TODO: fix this magic number
+            while self.read_distance > (150):  # TODO: fix this magic number
                 
                 self.fwd()
                 time.sleep(.01)
