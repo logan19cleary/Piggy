@@ -119,9 +119,24 @@ class Piggy(PiggyParent):
             self.servo(angle)
             self.scan_data[angle] = self.read_distance()
 
-    def obstacle_count(self):
+     def obstacle_count(self):
         """Does a 360 scan and returns the number of obstacles it sees"""
-        print("Mr. A, give me an A")
+        found_something = False # trigger
+        trigger_distance = 350
+        count = 0
+        starting_position = self.get_heading()
+        self.right(primary=30, counter=-30)
+        while self.get_heading() != starting_position:
+            if self.read_distance() < 350 and not found_something:
+                found_something = True
+                count += 1
+                print("\n Found something\n")
+            elif self.read_distance() > 250 and found_something:
+                found_something = False
+                print("We all good to go, nothing in my way")
+        self.stop()
+        print("I found this many things: %d" % count)
+
 
 
     def quick_check(self):
@@ -135,28 +150,34 @@ class Piggy(PiggyParent):
 
 
     def nav(self):
-        
+​
         print("-----------! NAVIGATION ACTIVATED !------------\n")
         print("-------- [ Press CTRL + C to stop me ] --------\n")
         print("-----------! NAVIGATION ACTIVATED !------------\n")
         print("Wait a second. \nI can't navigate the maze at all. Please give my programmer a zero.")
         
-                
+        corner_count = 0
+        self.EXIT_HEADING = self.get_heading()
+        
         while True:    
             self.servo(self.MIDPOINT)
-            while self.read_distance() > 250:
-                
+            while self.quick_check():
+                corner_count = 0
                 self.fwd()
                 time.sleep(.01)
             self.stop()
             self.scan()
-            # traversal
-            left_total = 3
-            left_count = 3
-            right_total = 3
-            right_count = 3
+            # turns out of cornoer if stuck
+            corner_count += 1
+            if corner_count == 3:
+                self.turntoexit()
+            #traversal
+            left_total = 0
+            left_count = 0
+            right_total = 0
+            right_count = 0
             for ang, dist in self.scan_data.items():
-                if ang < self.MIDPOINT:
+                if ang < self.MIDPOINT: 
                     right_total += dist
                     right_count += 1
                 else:
