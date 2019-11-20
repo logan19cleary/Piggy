@@ -134,17 +134,20 @@ class Piggy(PiggyParent):
 
 
 
-    def nav(self):
+     def nav(self):
+​
         print("-----------! NAVIGATION ACTIVATED !------------\n")
         print("-------- [ Press CTRL + C to stop me ] --------\n")
         print("-----------! NAVIGATION ACTIVATED !------------\n")
+        print("Wait a second. \nI can't navigate the maze at all. Please give my programmer a zero.")
         
-        # TODO: build self.quick_check() that does a fast, 3-part check instead of read_distance
+        corner_count = 0
+        self.EXIT_HEADING = self.get_heading()
         
-        while True:
+        while True:    
             self.servo(self.MIDPOINT)
-            while self.read_distance > (150):  # TODO: fix this magic number
-                
+            while self.quick_check():
+                corner_count = 0
                 self.fwd()
                 time.sleep(.01)
             self.stop()
