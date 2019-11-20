@@ -135,14 +135,13 @@ class Piggy(PiggyParent):
 
 
     def nav(self):
-​
+        
         print("-----------! NAVIGATION ACTIVATED !------------\n")
         print("-------- [ Press CTRL + C to stop me ] --------\n")
         print("-----------! NAVIGATION ACTIVATED !------------\n")
         print("Wait a second. \nI can't navigate the maze at all. Please give my programmer a zero.")
         
-        
-        
+                
         while True:    
             self.servo(self.MIDPOINT)
             while self.quick_check():
