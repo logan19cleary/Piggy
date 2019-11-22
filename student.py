@@ -119,7 +119,7 @@ class Piggy(PiggyParent):
             self.servo(angle)
             self.scan_data[angle] = self.read_distance()
 
-     def obstacle_count(self):
+    def obstacle_count(self):
         """Does a 360 scan and returns the number of obstacles it sees"""
         found_something = False # trigger
         trigger_distance = 350
