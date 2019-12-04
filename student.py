@@ -119,6 +119,33 @@ class Piggy(PiggyParent):
             self.servo(angle)
             self.scan_data[angle] = self.read_distance()
 
+    def menu(self):
+        """Displays menu dictionary, takes key-input and calls method"""
+        ## This is a DICTIONARY, it's a list with custom index values. Python is cool.
+        # Please feel free to change the menu and add options.
+        print("\n *** MENU ***") 
+        menu = {"n": ("Navigate", self.nav),
+                "d": ("Dance", self.dance),
+                "o": ("Obstacle count", self.obstacle_count),
+                "h": ("Hold position", self.hold_position),
+                "c": ("Calibrate", self.calibrate),
+                "q": ("Quit", self.quit)
+                }
+        # loop and print the menu...
+        for key in sorted(menu.keys()):
+            print(key + ":" + menu[key][0])
+        # store the user's answer
+        ans = str.lower(input("Your selection: "))
+        # activate the item selected
+        menu.get(ans, [None, self.quit])[1]()
+        # loop and print the menu...
+        for key in sorted(menu.keys()):
+            print(key + ":" + menu[key][0])
+        # store the user's answer
+        ans = str.lower(input("Your selection: "))
+        # activate the item selected
+        menu.get(ans, [None, self.quit])[1]()
+
     def obstacle_count(self):
         """Does a 360 scan and returns the number of obstacles it sees"""
         found_something = False # trigger
