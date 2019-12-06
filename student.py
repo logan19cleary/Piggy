@@ -146,22 +146,12 @@ class Piggy(PiggyParent):
         # activate the item selected
         menu.get(ans, [None, self.quit])[1]()
 
+    def hold_position(self):
+        pass
+
     def obstacle_count(self):
         """Does a 360 scan and returns the number of obstacles it sees"""
-        found_something = False # trigger
-        trigger_distance = 350
-        count = 0
-        starting_position = self.get_heading()
-        self.right(primary=30, counter=-30)
-        while self.get_heading() != starting_position:
-            if self.read_distance() < 350 and not found_something:
-                found_something = True
-                count += 1
-                print("\n Found something\n")
-            elif self.read_distance() > 250 and found_something:
-                found_something = False
-                print("We all good to go, nothing in my way")
-        self.stop()
+        pass
         print("I found this many things: %d" % count)
 
 
