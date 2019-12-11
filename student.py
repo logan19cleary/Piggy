@@ -147,7 +147,12 @@ class Piggy(PiggyParent):
         menu.get(ans, [None, self.quit])[1]()
 
     def hold_position(self):
-        pass
+          started_at = self.get_heading()
+        while True:
+            time.sleep(.1)
+            current_angle = self.get_heading()
+            if abs(started_at - current_angle) > 20:
+                self.turn_to_deg(started_at) 
 
     def obstacle_count(self):
         """Does a 360 scan and returns the number of obstacles it sees"""
