@@ -147,7 +147,7 @@ class Piggy(PiggyParent):
         menu.get(ans, [None, self.quit])[1]()
 
     def hold_position(self):
-          started_at = self.get_heading()
+        started_at = self.get_heading()
         while True:
             time.sleep(.1)
             current_angle = self.get_heading()
