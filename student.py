@@ -160,6 +160,14 @@ class Piggy(PiggyParent):
         pass
         print("I found this many things: %d" % count)
 
+    def turn_to_exit(self):
+        start = self.get_heading()
+        if not self.quick_check():
+            self.turn_by_deg(start)
+            return False
+        return True
+
+
 
 
     def quick_check(self):
@@ -192,7 +200,7 @@ class Piggy(PiggyParent):
             # turns out of cornoer if stuck
             corner_count += 1
             if corner_count == 3:
-                self.turntoexit()
+                self.turn_to_exit()
             #traversal
             left_total = 0
             left_count = 0
