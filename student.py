@@ -40,7 +40,7 @@ class Piggy(PiggyParent):
                 "o": ("Obstacle count", self.obstacle_count),
                 "c": ("Calibrate", self.calibrate),
                 "q": ("Quit", self.quit)
-                "v": ("Veer", self.slither)
+                
 
                 }
         # loop and print the menu...
