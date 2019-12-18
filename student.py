@@ -194,7 +194,7 @@ class Piggy(PiggyParent):
 
         
 
-        for power in range(self.LEFT_DEFAULT, 50, -10):
+        for power in range(self.LEFT_DEFAULT, 80, -10):
             self.set_motor_power(self.MOTOR_LEFT, power)
             time.sleep(.5)
         
@@ -205,7 +205,7 @@ class Piggy(PiggyParent):
 
 
         
-        for power in range(self.RIGHT_DEFAULT, 50, -10):
+        for power in range(self.RIGHT_DEFAULT, 80, -10):
             self.set_motor_power(self.MOTOR_LEFT, power)
             time.sleep(.5)
 
