@@ -40,7 +40,7 @@ class Piggy(PiggyParent):
                 "o": ("Obstacle count", self.obstacle_count),
                 "c": ("Calibrate", self.calibrate),
                 "q": ("Quit", self.quit)
-                "s": ("Slither", self.slither)
+                "v": ("Veer", self.slither)
 
                 }
         # loop and print the menu...
@@ -195,7 +195,7 @@ class Piggy(PiggyParent):
 
         
 
-        for power in range(self.LEFT_DEFAULT, 30, -10):
+        for power in range(self.LEFT_DEFAULT, 50, -10):
             self.set_motor_power(self.MOTOR_LEFT, power)
             time.sleep(.5)
         
@@ -206,7 +206,7 @@ class Piggy(PiggyParent):
 
 
         
-        for power in range(self.RIGHT_DEFAULT, 30, -10):
+        for power in range(self.RIGHT_DEFAULT, 50, -10):
             self.set_motor_power(self.MOTOR_LEFT, power)
             time.sleep(.5)
 
