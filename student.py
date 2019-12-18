@@ -219,9 +219,11 @@ class Piggy(PiggyParent):
         while self.get_heading() != starting_direction:
             if self.get_heading() < starting_direction:
                 right_speed -= 10
+                left_speed += 5
 
             elif self.get_heading() > starting_direction:
                 left_speed -=10
+                right_speed += 5
 
         self.set_motor_power(self.MOTOR_LEFT, self.LEFT_DEFAULT)
         self.set_motor_power(self.MOTOR_RIGHT, self.RIGHT_DEFAULT)
